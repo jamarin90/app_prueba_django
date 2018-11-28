@@ -1,9 +1,6 @@
 {% extends 'navidad/base.html' %}
 {% block contenido %}
-
-{% for persona in personas %}
-{{ persona.usuario.first_name }}
-{% endfor %}
+{{ persona }}
 <!--<table border="1">-->
     <!--<tr>-->
         <!--<th>Usuario</th>-->
