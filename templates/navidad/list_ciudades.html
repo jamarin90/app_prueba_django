@@ -1,0 +1,21 @@
+{% extends 'navidad/base.html' %}
+{% block contenido %}
+<ul>
+{% for ciudad in object_list %}
+    <li>
+{{ ciudad.nombre }}
+    </li>
+{% endfor %}
+</ul>
+<!--<table border="1">-->
+    <!--<tr>-->
+        <!--<th>Usuario</th>-->
+    <!--</tr>-->
+<!--{% for persona in personas %}-->
+    <!--<tr>-->
+        <!--<td>{{ persona.usuario.first_name }}</td>-->
+    <!--</tr>-->
+<!--{% endfor %}-->
+<!--</table>-->
+<!--<a href="{#{% url 'navidad:crear-persona' %}#}">Crear Persona</a>-->
+{% endblock %}

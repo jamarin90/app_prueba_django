@@ -1,0 +1,211 @@
+@media all {
+	.page-break	{ display: none; }
+}
+
+@media print {
+	.page-break	{ display: block; page-break-before: always; }
+	html, body, table, div {
+		margin:0px;
+		font-family:Arial;
+		font-size:14px;
+	}
+}
+
+html, body, table, div {
+	margin:0px;
+	font-family:Arial;
+	font-size:14px;
+}
+
+.titulo {
+	width:1100px;
+	margin:0px auto;
+	padding:10px 2px 0px 2px;
+}
+
+.logo, .encabezado, .fecha, .guia, .encabezado_medellin, .fecha_medellin, .guia_medellin, .cbarras_medellin {
+	display:inline-block;
+	vertical-align:top;
+}
+
+.logo {
+	margin:5px;
+}
+
+.encabezado {
+	width:220px;
+}
+
+.encabezado_medellin {
+	width:400px;
+}
+
+.fecha {
+	width:280px;
+}
+
+.fecha_medellin {
+	width:242px;
+	text-align:left;
+	margin-right:15px;
+}
+
+.fecha .f1f, .fecha .f2f, .fecha_medellin .f1f, .fecha_medellin .f2f  {
+	display:inline-block;
+	width:150px;
+	margin:5px 10px 5px 0px;
+}
+
+.fecha .fechaG {
+	border:#999 thin solid;
+	padding:3px 10px;
+	margin-bottom:3px;
+	font-weight:bold;
+}
+
+.fecha_medellin .fechaG {
+	border:#999 thin solid;
+	padding:2px;
+	margin-bottom:3px;
+	font-weight:bold;
+}
+
+.guia, .tguia {
+	width:450px;
+	text-align:center;
+	font-weight:bold;
+	font-size:14px;
+}
+
+.guia_medellin {
+	width:500px;
+	text-align:center;
+	font-weight:bold;
+	font-size:14px;
+}
+
+.tguia_medellin {
+	text-align:center;
+	font-weight:bold;
+	font-size:14px;
+}
+
+.areas {
+	width:49%;
+	display:inline-block;
+	vertical-align:top;
+	margin-right: 5px;
+}
+
+.campos {
+	vertical-align:top;
+	border:thin #999999 solid;
+	padding:5px;
+	margin-bottom: 10px;
+}
+
+.tcampo {
+	border-bottom: thin #999 solid;
+	font-weight:bold;
+	padding: -5px 5px 5px 5px;
+}
+
+.tdestino {
+	font-size:18px;
+	vertical-align:central;
+	text-align:center;
+	font-weight:bold;
+	margin:10px;
+}
+
+.dev {
+	font-size:10px;
+	width:100%;
+}
+
+.dev td {
+	text-align:center;
+	min-width:40px;
+}
+
+.dev .c {
+	width:10px;
+	height:10px;
+	border:#999 thin solid;
+	display:block;
+	margin: 0px auto;
+}
+
+.tenue {
+	color:#CCC;
+	padding: 0px 10px;
+}
+
+.hora {
+	padding:0px 30px;
+}
+
+.confor {
+	font-weight:bold;
+	margin:5px 0px 45px 0px;
+}
+
+.firma {
+	border-top:thin #999999 solid;
+	margin-bottom:10px;
+}
+
+.firma_last {
+	border-top:thin #999999 solid;
+	margin-bottom:0px;
+}
+
+.fondo {
+	background-image: URL('crossword.png');
+}
+
+.tb_cons {
+	border:#999 thin solid;
+	font-size:0.9em;
+	text-align:center;
+}
+
+.tb_cons tbody tr:nth-child(even) {
+    background-color: #F4FCED;
+}
+
+.tb_cons tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+
+.tb_cons thead tr, .tb_cons tfoot tr {
+	background-color:#B5C8F4;
+	height:25px;
+	font-weight:bold;
+}
+
+#resultadoCon {
+	margin-top:15px;
+}
+
+#con_lista, #con_estado {
+	margin:10px 0px;
+	color:#030;
+	font-weight:bold;
+}
+
+.pie_impresion {
+	font-size:10px;
+	margin-bottom:60px;
+}
+
+.pie_impresion_fin {
+	font-size:10px;
+	margin-bottom:0px;
+}
+
+.relleno {
+	min-height:150px;
+	background-color:#F90;
+}

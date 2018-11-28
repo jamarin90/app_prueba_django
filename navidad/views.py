@@ -8,10 +8,10 @@ from django.shortcuts import render
 # def home(request):
 #     return HttpResponse('Hola feliz navidad!!')
 from django.urls import reverse_lazy
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 
 from navidad.forms import CrearPersonaForm
-from navidad.models import Persona
+from navidad.models import Persona, Pais, Ciudad
 
 
 def home(request):
@@ -57,3 +57,33 @@ def crear_persona(request):
 def ver_persona(request, id_persona):
     persona = Persona.objects.get(pk=id_persona)
     return render(request, 'navidad/ver_persona.html', {'persona': persona})
+
+
+class CrearCiudad(CreateView):
+    model = Ciudad
+    fields = ['nombre', 'estado']
+    template_name = 'navidad/crear_ciudad.html'
+    success_url = reverse_lazy('navidad:listar-ciudades')
+
+
+class ListCiudad(ListView):
+    model = Ciudad
+    template_name = 'navidad/list_ciudades.html'
+
+
+class VerCiudad(DetailView):
+    model = Ciudad
+    template_name = 'navidad/detalle_ciudad.html'
+
+
+class ActualizarCiudad(UpdateView):
+    model = Ciudad
+    fields = ['nombre', 'estado']
+    template_name = 'navidad/crear_ciudad.html'
+    success_url = reverse_lazy('navidad:listar-ciudades')
+
+
+class EliminarCiudad(DeleteView):
+    model = Ciudad
+    template_name = 'navidad/ciudad_confirm_delete.html'
+    success_url = reverse_lazy('navidad:listar-ciudades')
