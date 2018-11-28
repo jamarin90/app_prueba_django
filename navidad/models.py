@@ -66,7 +66,7 @@ class Persona(models.Model):
 
 class Regalo(models.Model):
     persona = models.ForeignKey(Persona, on_delete=models.CASCADE)
-    descripcion = models.CharField(max_length=100, null=True)
+    descripcion = models.CharField(max_length=100)
     fecha = models.DateField(auto_now_add=False)
 
     class Meta:

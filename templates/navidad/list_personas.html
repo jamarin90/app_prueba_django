@@ -1,0 +1,13 @@
+{% extends 'navidad/base.html' %}
+{% block contenido %}
+<table border="1">
+    <tr>
+        <th>Usuario</th>
+    </tr>
+{% for persona in personas %}
+    <tr>
+        <td>{{ persona.usuario.first_name }}</td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}
