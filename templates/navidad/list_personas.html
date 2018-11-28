@@ -1,18 +1,53 @@
 {% extends 'navidad/base.html' %}
+{% block css %}
+{{ block.super }}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'plugins/datatables/dataTables.bootstrap.css' %}">
+{% endblock css %}
 {% block contenido %}
-
-{% for persona in personas %}
-{{ persona.usuario.first_name }}
-{% endfor %}
-<!--<table border="1">-->
-    <!--<tr>-->
-        <!--<th>Usuario</th>-->
-    <!--</tr>-->
-<!--{% for persona in personas %}-->
-    <!--<tr>-->
-        <!--<td>{{ persona.usuario.first_name }}</td>-->
-    <!--</tr>-->
-<!--{% endfor %}-->
-<!--</table>-->
-<!--<a href="{#{% url 'navidad:crear-persona' %}#}">Crear Persona</a>-->
+<br>
+<div class="row">
+<div class="col-md-3"><a class="btn btn-primary" href="{% url 'navidad:crear-persona' %}" role="button">Crear</a></div>
+</div>
+<br>
+<div class="box box-default">
+    <br>
+    <div class="box-body table-responsive no-padding">
+        <div class="col-md-12 col-sm-12">
+        <table id="example" class="table table-hover table-striped table-bordered dataTable" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <td>Nombres</td>
+                    <td>Apellidos</td>
+                    <td>Ciudad</td>
+                    <td>Acciones</td>
+                </tr>
+            </thead>
+                <tbody>
+                    {% for persona in personas %}
+                    <tr>
+                        <td>{{ persona.usuario.first_name }}</td>
+                        <td>{{ persona.usuario.last_name }}</td>
+                        <td>{{ persona.ciudad.nombre }}</td>
+                        <td><a class="btn btn-primary" href="{% url 'navidad:ver-persona' persona.pk %}" role="button">Detalle</a></td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+            </table>
+    </div>
+</div>
+</div>
 {% endblock %}
+{% block js %}
+{{ block.super }}
+<script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'plugins/datatables/dataTables.bootstrap.min.js' %}"></script>
+<script>
+
+$('#example').dataTable( {
+    "order": [1,"desc"]
+} );
+$.fn.dataTable.ext.errMode = 'none';
+
+</script>
+{% endblock js %}

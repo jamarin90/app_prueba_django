@@ -1,9 +1,25 @@
 {% extends 'navidad/base.html' %}
 {% block contenido %}
-Nombre: {{ciudad }}
-Departamento: {{ ciudad.estado }}
-Pais: {{ ciudad.estado.pais }}
-
+<br>
+<center>
+<div class="box box-default">
+    <br>
+    <div class="box-body table-responsive no-padding">
+<div class="col-md-3">
+    <label>Ciudad: </label>
+    {{ ciudad }}
+</div>
+<div class="col-md-3">
+    <label>Departamento: </label>
+    {{ ciudad.estado }}
+</div>
+<div class="col-md-3">
+    <label>Pais: </label>
+    {{ ciudad.estado.pais }}
+</div>
+        <div class="box-body table-responsive no-padding">
+</div>
+        </center>
 <!--<table border="1">-->
     <!--<tr>-->
         <!--<th>Usuario</th>-->
